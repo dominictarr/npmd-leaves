@@ -1,7 +1,7 @@
 {
   "name": "npmd-leaves",
   "description": "convert dependency tree into leaf hash list",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/dominictarr/npmd-leaves",
   "repository": {
     "type": "git",
