@@ -1,11 +1,11 @@
 {
-  "name": "npmd-resolve",
-  "description": "resolve npm dependency trees",
-  "version": "2.1.1",
-  "homepage": "https://github.com/dominictarr/npmd-resolve",
+  "name": "npmd-leaves",
+  "description": "convert dependency tree into leaf hash list",
+  "version": "1.0.0",
+  "homepage": "https://github.com/dominictarr/npmd-leaves",
   "repository": {
     "type": "git",
-    "url": "git://github.com/dominictarr/npmd-resolve.git"
+    "url": "git://github.com/dominictarr/npmd-leaves.git"
   },
   "dependencies": {
     "pull-stream"  : "~2.20.0",
