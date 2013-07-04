@@ -1,0 +1,23 @@
+{
+  "name": "npmd-resolve",
+  "description": "resolve npm dependency trees",
+  "version": "2.1.1",
+  "homepage": "https://github.com/dominictarr/npmd-resolve",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dominictarr/npmd-resolve.git"
+  },
+  "dependencies": {
+    "pull-stream"  : "~2.20.0",
+    "pull-traverse": "~1.0.0",
+    "shasum"       : "0.0.3"       
+  },
+  "devDependencies": {
+    "tape": "1.0.4"
+  },
+  "scripts": {
+    "test": "set -e; for t in test/*.js; do node $t; done"
+  },
+  "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
+  "license": "MIT"
+}
