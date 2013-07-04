@@ -1,0 +1,36 @@
+{
+  "foo": {
+    "name": "foo",
+    "version": "1.0.0",
+    "shasum": "943e0ec03df00ebeb6273a5b94b916ba54b47581",
+    "dependencies": {}
+  },
+  "pull-stream": {
+    "name": "pull-stream",
+    "version": "2.20.0",
+    "shasum": "f2c041c5dd6aecc5494f1a995bece1dc732ac039",
+    "dependencies": {
+      "pull-core": {
+        "name": "pull-core",
+        "version": "1.0.0",
+        "shasum": "e0eb93918dfa70963ed09e36f63daa15b76b38a4",
+        "from": "~1.0.0",
+        "dependencies": {}
+      }
+    }
+  },
+  "pull-window": {
+    "name": "pull-window",
+    "version": "2.1.0",
+    "shasum": "99f8112df9c861a72f73cc3c7bec5237f323f35f",
+    "dependencies": {
+      "pull-core": {
+        "name": "pull-core",
+        "version": "1.0.0",
+        "shasum": "e0eb93918dfa70963ed09e36f63daa15b76b38a4",
+        "from": "~1.0.0",
+        "dependencies": {}
+      }
+    }
+  }
+}

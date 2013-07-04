@@ -1,0 +1,32 @@
+{
+  "943e0ec03df00ebeb6273a5b94b916ba54b47581": {
+    "name": "foo",
+    "version": "1.0.0",
+    "hash": "943e0ec03df00ebeb6273a5b94b916ba54b47581",
+    "shasum": "943e0ec03df00ebeb6273a5b94b916ba54b47581"
+  },
+  "e0eb93918dfa70963ed09e36f63daa15b76b38a4": {
+    "name": "pull-core",
+    "version": "1.0.0",
+    "hash": "e0eb93918dfa70963ed09e36f63daa15b76b38a4",
+    "shasum": "e0eb93918dfa70963ed09e36f63daa15b76b38a4"
+  },
+  "e7f7acc6616950574009b0ca53f99e776b96d78c": {
+    "name": "pull-stream",
+    "version": "2.20.0",
+    "hash": "e7f7acc6616950574009b0ca53f99e776b96d78c",
+    "shasum": "f2c041c5dd6aecc5494f1a995bece1dc732ac039",
+    "dependencies": {
+      "pull-core": "e0eb93918dfa70963ed09e36f63daa15b76b38a4"
+    }
+  },
+  "4a0a51890942181cd93ba9f1aa98b85d971e03ca": {
+    "name": "pull-window",
+    "version": "2.1.0",
+    "hash": "4a0a51890942181cd93ba9f1aa98b85d971e03ca",
+    "shasum": "99f8112df9c861a72f73cc3c7bec5237f323f35f",
+    "dependencies": {
+      "pull-core": "e0eb93918dfa70963ed09e36f63daa15b76b38a4"
+    }
+  }
+}
