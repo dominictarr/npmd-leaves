@@ -21,7 +21,7 @@ function map(obj, m) {
 
 function leafFirst(tree) {
    return pull(pt.leafFirst(tree, function (tree) {
-    return pull.values(tree.dependencies)
+    return pull.values(tree.dependencies || tree)
   }), pull.filter())
 }
 
@@ -34,11 +34,25 @@ function collect(field, cb) {
   })
 }
 
+function roots (tree) {
+  var deps = {}, roots = {}
+  for(var k in tree) {
+    for(var j in tree[k].dependencies)
+      deps[tree[k].dependencies[j]] = true
+  }
+  for(var k in tree) {
+    var pkg = tree[k]
+    if(!deps[k])
+      roots[k] = {name: pkg.name, version: pkg.version, hash: pkg.hash}
+  }
+  return roots
+}
 
 //hash the deps through the tree.
 
 module.exports = 
 function (tree, cb) {
+  var tree = JSON.parse(JSON.stringify(tree))
   var _tree
   pull(
     leafFirst(tree),
@@ -58,6 +72,9 @@ function (tree, cb) {
     }),
     pull.map(function (pkg) {
 
+      if(!pkg.dependencies)
+        return null
+
       var _deps = {}, deps = pkg.dependencies
       var ret = {
         name: pkg.name, version: pkg.version,
@@ -74,6 +91,7 @@ function (tree, cb) {
 
       return ret
     }),
+    pull.filter(),
     pull.unique('hash'),
     collect('hash', function (err, tree) {
       _tree = tree
@@ -85,3 +103,4 @@ function (tree, cb) {
   return _tree
 }
 
+module.exports.roots = roots
