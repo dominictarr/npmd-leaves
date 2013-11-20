@@ -112,7 +112,6 @@ if(!module.parent) {
   process.stdin
     .on('data', function (d) { data += d })
     .on('end', function () {
-      console.log(data)
       console.log(module.exports(JSON.parse(data)))
     })
 }
