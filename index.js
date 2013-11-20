@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 var pt   = require('pull-traverse')
 var pull = require('pull-stream')
 var hash = require('shasum')
@@ -58,6 +59,7 @@ function (tree, cb) {
     leafFirst(tree),
     pull.through(function (pkg) {
       var m = map(pkg.dependencies, function (pkg) {
+        if(!pkg.shasum) throw new Error(pkg.name + '@' + pkg.version + ' is missing shasum')
         return pkg.shasumDeps || pkg.shasum
       }).sort()
       if(m.length) {
@@ -104,3 +106,13 @@ function (tree, cb) {
 }
 
 module.exports.roots = roots
+
+if(!module.parent) {
+  var data = ''
+  process.stdin
+    .on('data', function (d) { data += d })
+    .on('end', function () {
+      console.log(data)
+      console.log(module.exports(JSON.parse(data)))
+    })
+}
